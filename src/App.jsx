@@ -120,7 +120,7 @@ const useStyles = makeStyles(theme => ({
             >
               See your favourites. Get suggestions.
             </Typography> */}
-          }
+          
 
           </div>
         )}

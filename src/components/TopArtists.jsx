@@ -38,7 +38,7 @@ function TopArtists(props){
                 </ol> 
             </div> */}
 
-            <ol style={{marginBottom: "45px"}}>
+            <ol style={{marginBottom: "50px"}}>
                 {trail.map(({ x, height, ...rest }, index) => (
                 <Grid item>
                     
