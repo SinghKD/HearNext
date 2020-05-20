@@ -20,7 +20,7 @@ function TopTracks(props){
     config,
     opacity: toggle ? 1 : 0,
     x: toggle ? 0 : 20,
-    height: toggle ? 25 : 0,
+    height: toggle ? 30 : 0,
     from: { opacity: 0, x: 20, height: 0 },
      })
 
