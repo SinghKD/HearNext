@@ -28,107 +28,84 @@ function TopTracks(props){
         <div>
             
         <Grid container direction="column" alignItems="center">
-            {/* <div style={{marginBottom: "40px"}}>
-                <ol>
-                {props.tracks.map(track =>
-
-                <Grid item>
-                    <Spring
-                            from={{opacity: 0}}
-                            to={{opacity: 1}}
-                            config={{duration: 1000}}
-                        >
-                            {props => (
-                            <div style={props}>
-                            <Typography color="primary">
-                            <li>{track}</li>
-                            </Typography>
-                            </div>
-                    )}
-                    </Spring>
-                </Grid>
-                )}
-
-                </ol> 
-            </div> */}
 
             <ol style={{marginBottom: "50px"}}>
                 {trail.map(({ x, height, ...rest }, index) => (
-                <Grid item>
-                    
+                    <Grid item>
+                        
                     <Typography color="primary">
                     <li>
-                <animated.div
-                key={props.tracks[index]}
-                className="trails-text"
-                style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}>
-                <animated.div style={{ height }}>{props.tracks[index]}</animated.div>
-                </animated.div>
-                </li>
-                </Typography>
-                
-                </Grid>
+                        <animated.div
+                        key={props.tracks[index]}
+                        className="trails-text"
+                        style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}>
+                        <animated.div style={{ height }}>{props.tracks[index]}</animated.div>
+                        </animated.div>
+                    </li>
+                    </Typography>
+                    
+                    </Grid>
                 ))}
             </ol>
                 
             <Grid item>
             {!trackSugg?
 
-            <Spring
-            from={{opacity: 0}}
-            to={{opacity: 1}}
-            config={{duration: 1000, delay: 1200}}
-            >
-            {props => (
-            <div style={props}>
-            <Button 
-                onClick={handleClick}
-                // className={props.Classes.link}
-                style={{fontFamily: 'Montserrat'}}
-                variant="outlined"
-                color="primary" 
-                size="medium"
-            >
-               Get Suggestions based on your favourite tracks 
-            </Button>
-            </div>
-            )}
-            </Spring>
-            :
-            <Button 
-                onClick={handleClick}
-                className={props.Classes.link}
-                variant="outlined"
-                color="primary" 
-                size="medium"
-            >
-               Hide Suggestions
-            </Button>
+                <Spring
+                    from={{opacity: 0}}
+                    to={{opacity: 1}}
+                    config={{duration: 1000, delay: 1200}}
+                >
+                    {props => (
+                    <div style={props}>
+                        <Button 
+                            onClick={handleClick}
+                            // className={props.Classes.link}
+                            style={{fontFamily: 'Montserrat'}}
+                            variant="outlined"
+                            color="primary" 
+                            size="medium"
+                        >
+                            Get Suggestions based on your favourite tracks 
+                        </Button>
+                    </div>
+                    )}
+                </Spring>
+                :
+                <Button 
+                    onClick={handleClick}
+                    className={props.Classes.link}
+                    variant="outlined"
+                    color="primary" 
+                    size="medium"
+                >
+                Hide Suggestions
+                </Button>
             }           
             </Grid>
         
             {trackSugg &&
              
              <Spring
-             from={{opacity: 0}}
-             to={{opacity: 1}}
-             config={{duration: 1200, delay: 600}}
+                from={{opacity: 0}}
+                to={{opacity: 1}}
+                config={{duration: 1200, delay: 600}}
              >
-             {prop => (
-             <div style={prop}>
-                <ul>
-                {props.suggTracks.map(track => 
-                    <Grid item >
-                    <Typography color="primary">
-                        <li>{track.name.toUpperCase()} by {track.artists["0"].name}</li>
-                    </Typography>
-                     </Grid>)}
-                </ul>
-            </div>
-            )}
+                {prop => (
+                <div style={prop}>
+                    <ul>
+                    {props.suggTracks.map(track => 
+                        <Grid item >
+                            <Typography color="primary">
+                                <li>{track.name.toUpperCase()} by {track.artists["0"].name}</li>
+                            </Typography>
+                        </Grid>)}
+                    </ul>
+                </div>
+                )}
             </Spring>}
 
-        </Grid>
+         </Grid>
 
         </div>
     )
